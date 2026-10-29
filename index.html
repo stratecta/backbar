@@ -23,6 +23,12 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:20;background:rgba(246,241,234,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav img{height:44px;display:block}
+.brand{display:flex;align-items:center;gap:6px;text-decoration:none}
+.nav .brand .em{height:58px}
+.fbrand{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.fbrand img{margin-bottom:0!important}
+footer .fbrand .em{height:52px}
+@media(max-width:600px){.nav .brand .em{height:46px}.nav img{height:36px}}
 .nav nav{display:flex;gap:22px;align-items:center;font-size:13px;letter-spacing:.08em}
 .nav nav a{text-decoration:none}
 .btn{display:inline-block;text-decoration:none;padding:14px 30px;font-size:13px;letter-spacing:.12em;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:.2s}
@@ -126,7 +132,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 </head>
 <body>
 <header><div class="wrap nav">
- <a href="#top"><img src="img/logo.svg" alt="BACKBAR"></a>
+ <a href="#top" class="brand"><img class="em" src="img/emblem.png" alt=""><img src="img/logo.svg" alt="BACKBAR"></a>
  <nav>
   <a href="#about">名前について</a><a href="#regen">幹細胞上清液</a><a href="#catalog">商品カタログ</a><a href="#benefit">会員について</a><a href="#flow">はじめ方</a>
   <a class="btn solid" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINEで会員申請</a>
@@ -227,7 +233,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 </div></section>
 
 <footer><div class="wrap">
- <div><img src="img/logo_rev.svg" alt="BACKBAR"><div>BACKBAR（株式会社STRATECTA 美容事業部）　〒530-0001 大阪府大阪市北区梅田1-2-2 大阪駅前第2ビル12-12　TEL 06-7777-6267</div><div>P-UP シリーズ 製造元：株式会社フロンテ／輸入発売元（CHEMISTRY）：大阪ブラシ株式会社</div></div>
+ <div><div class="fbrand"><img class="em" src="img/emblem_rev.png" alt=""><img src="img/logo_rev.svg" alt="BACKBAR"></div><div>BACKBAR（株式会社STRATECTA 美容事業部）　〒530-0001 大阪府大阪市北区梅田1-2-2 大阪駅前第2ビル12-12　TEL 06-7777-6267</div><div>P-UP シリーズ 製造元：株式会社フロンテ／輸入発売元（CHEMISTRY）：大阪ブラシ株式会社</div></div>
  <div style="align-self:flex-end">© STRATECTA Inc.</div>
 </div></footer>
 
