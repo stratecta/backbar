@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会員申請｜BACKBAR</title>
+<meta name="description" content="BACKBAR 会員申請（無料）。サロン・美容ディーラー専用の卸価格・ロット特典・請求書払い。LINEまたは申請フォームから。">
+<meta property="og:title" content="BACKBAR｜サロン・ディーラー専用卸 P-UP シリーズ">
+<meta property="og:description" content="P-UP シリーズ全70品目をサロン・美容ディーラー専用の卸価格で。LINEで会員申請・ご注文。">
+<meta property="og:image" content="img/icon.png">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1B1B1B;--paper:#F6F1EA;--copper:#B98A5A;--copper-d:#9A7048;--mute:#6B6560;--body:#4A4541;--line:#1B1B1B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.serif{font-family:'Shippori Mincho',serif;font-weight:500}
+.eyebrow{font-family:Jost,sans-serif;font-size:12px;letter-spacing:.35em;color:var(--copper);text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(246,241,234,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav img{height:44px;display:block}
+.brand{display:flex;align-items:center;gap:6px;text-decoration:none}
+.nav .brand .em{height:58px}
+.fbrand{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.fbrand img{margin-bottom:0!important}
+footer .fbrand .em{height:52px}
+@media(max-width:600px){.nav .brand .em{height:46px}.nav img{height:36px}}
+.nav nav{display:flex;gap:22px;align-items:center;font-size:13px;letter-spacing:.08em}
+.nav nav a{text-decoration:none}
+.btn{display:inline-block;text-decoration:none;padding:14px 30px;font-size:13px;letter-spacing:.12em;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:.2s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:#000}
+.btn.line{background:#06C755;border-color:#06C755;color:#fff}
+.btn.line:hover{background:#05b34c}
+.hero .wrap{display:grid;grid-template-columns:6fr 5fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:72px}
+.hero h1{margin:0;font-size:clamp(28px,4.2vw,46px);line-height:1.5}
+.hero p{margin:0;font-size:15px;line-height:2;color:var(--body)}
+.hero .img{background:#fff;padding:36px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.hero .img img{max-width:100%;max-height:100%;object-fit:contain}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:80px 0}
+.white{background:#fff}
+.dark{background:var(--ink);color:var(--paper)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:40px}
+.sec-head h2{margin:6px 0 0;font-size:clamp(24px,3vw,34px)}
+.sec-head .sub{font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.card{display:flex;flex-direction:column;gap:12px;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.card .ph{aspect-ratio:1/1;background:var(--paper);display:flex;align-items:center;justify-content:center;padding:24px;position:relative}
+.white .card .ph{background:var(--paper)}
+.card .ph img{max-width:100%;max-height:100%;object-fit:contain}
+.card .ph.none{color:var(--mute);font-size:12px;letter-spacing:.1em}
+.card .cat{font-family:Jost,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--copper)}
+.card .nm{font-family:'Shippori Mincho',serif;font-size:16px;line-height:1.45}
+.card .meta{font-size:12px;color:var(--mute)}
+.card .price{font-size:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{font:inherit;font-size:12px;letter-spacing:.08em;padding:9px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.tech .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.tech h2{margin:0;font-size:clamp(24px,3vw,32px);line-height:1.5}
+.tech p{color:#B8B2A8;font-size:14px;line-height:2}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#3A3632}
+.stats div{background:var(--ink);padding:30px 16px;text-align:center}
+.stats b{display:block;font-family:'Shippori Mincho',serif;font-weight:500;font-size:34px;color:var(--copper)}
+.stats span{font-size:11px;color:#B8B2A8;letter-spacing:.1em}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.box{background:#fff;padding:32px;display:flex;flex-direction:column;gap:12px}
+.box .n{font-family:'Shippori Mincho',serif;font-size:13px;color:var(--copper);letter-spacing:.2em}
+.box h3{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:19px}
+.box p{margin:0;font-size:14px;line-height:1.9;color:var(--body)}
+.cols4{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.step{display:flex;flex-direction:column;gap:8px}
+.step .n{font-family:'Shippori Mincho',serif;font-size:30px;color:var(--copper)}
+.step .t{font-size:16px;font-weight:500}
+.step .d{font-size:13px;line-height:1.8;color:var(--mute)}
+.apply{background:var(--paper);padding:56px 24px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
+.apply h3{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(20px,2.6vw,26px)}
+.apply .qr{width:140px;height:140px;background:#fff;padding:8px}
+.apply small{font-size:12px;color:var(--mute)}
+footer{background:var(--ink);color:#B8B2A8;font-size:12px}
+footer .wrap{padding:44px 20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer img{height:36px;display:block;margin-bottom:12px}
+footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(27,27,27,.6);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal.open{display:flex}
+.modal .pane{background:#fff;max-width:880px;width:100%;max-height:90vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr}
+.modal .ph{background:var(--paper);display:flex;align-items:center;justify-content:center;padding:36px;min-height:320px}
+.modal .ph img{max-width:100%;max-height:380px;object-fit:contain}
+.modal .body{padding:36px;display:flex;flex-direction:column;gap:14px;position:relative}
+.modal h3{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:22px;line-height:1.4}
+.modal dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:13px}
+.modal dt{color:var(--mute)}
+.modal dd{margin:0}
+.modal .close{position:absolute;top:12px;right:14px;border:0;background:none;font-size:24px;cursor:pointer;color:var(--mute)}
+.modal .lock{background:var(--paper);padding:16px;font-size:12px;color:var(--body);line-height:1.8}
+.chip{display:inline-block;font-size:11px;letter-spacing:.1em;border:1px solid var(--copper);color:var(--copper);padding:2px 8px}
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;display:none}
+@media (max-width:900px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:40px;padding-bottom:48px}
+ .hero .img{order:-1;padding:24px}
+ .grid{grid-template-columns:repeat(2,1fr);gap:18px}
+ .tech .wrap{grid-template-columns:1fr}
+ .cols3,.cols4{grid-template-columns:1fr}
+ .nav nav a:not(.btn){display:none}
+ .nav .btn{padding:10px 16px}
+ .modal .pane{grid-template-columns:1fr}
+ section{padding:56px 0}
+ .fab{display:block}
+}
+
+.regen{background:#fff;border-top:1px solid rgba(27,27,27,.08)}
+.regen .lead{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;margin-bottom:40px}
+.regen p{color:var(--body);font-size:14px;line-height:2;margin:0}
+.regen .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(27,27,27,.12);border:1px solid rgba(27,27,27,.12)}
+.regen .facts div{background:#fff;padding:18px 16px}
+.regen .facts b{display:block;font-family:'Shippori Mincho',serif;font-size:18px;font-weight:500;margin-bottom:4px}
+.regen .facts span{font-size:12px;color:var(--mute);line-height:1.7}
+.regen .doc{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center;background:var(--paper);padding:32px;margin-top:40px}
+.regen .doc img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;display:block}
+.regen .doc .role{font-size:12px;color:var(--copper);letter-spacing:.12em;margin-bottom:6px}
+.regen .doc h3{font-family:'Shippori Mincho',serif;font-weight:500;font-size:24px;margin:0 0 10px}
+.regen .doc ul{list-style:none;padding:0;margin:12px 0 0;font-size:13px;color:var(--body);line-height:1.9}
+.regen .doc ul li b{font-weight:500;color:var(--ink);margin-right:10px;font-family:'Jost',sans-serif}
+@media(max-width:860px){.regen .lead{grid-template-columns:1fr}.regen .facts{grid-template-columns:1fr}.regen .doc{grid-template-columns:1fr;padding:24px}.regen .doc img{max-width:200px}}
+.regen.alt{background:var(--paper);border-top:0}
+.regen.alt .doc{background:#fff}
+.regen.alt .facts div{background:var(--paper)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a href="./" class="brand"><img class="em" src="img/emblem.png" alt=""><img src="img/logo.svg" alt="BACKBAR"></a>
+ <nav>
+  <a href="./#regen">幹細胞上清液</a><a href="./#catalog">商品カタログ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a>
+  <a class="btn solid" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINEで会員申請</a>
+ </nav>
+</div></header>
+<section id="about" class="white"><div class="wrap" style="max-width:860px">
+ <div class="sec-head" style="margin-bottom:28px"><div><span class="eyebrow">About the Name</span><h2 class="serif">BACKBAR という名前について</h2></div></div>
+ <p style="margin:0 0 16px;font-size:15px;line-height:2.1;color:var(--body)">海外のサロンでは、シャンプー台や施術席の後ろに並ぶプロ専用の商材を「バックバー」と呼びます。お客様に販売する店販品（リテール）に対して、スタイリストが施術で実際に使い、効果を確かめるためのもの。</p>
+ <p style="margin:0;font-size:15px;line-height:2.1;color:var(--body)">髪に触れるプロが選び、使い続けているものだけが並ぶ場所。BACKBAR は、その棚にふさわしい商材を、サロンと、サロンを支えるディーラーに届ける卸窓口です。</p>
+</div></section>
+
+<section id="benefit"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">For Members</span><h2 class="serif">会員サロン・ディーラーのために</h2></div></div>
+ <div class="cols3">
+  <div class="box"><span class="n">01</span><h3>会員専用の卸価格</h3><p>サロンは希望小売価格の70%。最低ロットなし。11＋1 などのロット特典で、売れた分だけ仕入れる運用ができます。ディーラー様には取扱規模に応じた条件をご提案します。</p></div>
+  <div class="box"><span class="n">02</span><h3>請求書払い・月末締め</h3><p>審査通過後は掛売りに対応。都度決済なしで、月に一度まとめてお支払いいただけます。</p></div>
+  <div class="box"><span class="n">03</span><h3>LINEで注文・相談</h3><p>発注・補充・相談はLINE公式アカウントで完結。メーカー公式の販促資材もトークでお届けします。</p></div>
+ </div>
+</div></section>
+
+<section id="flow" class="white"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">How to Start</span><h2 class="serif">はじめ方は、とても簡単です</h2></div></div>
+ <div class="cols4">
+  <div class="step"><span class="n">01</span><span class="t">会員申請</span><span class="d">LINE友だち追加後に店舗名・会社名等をトークで送るか、申請フォーム（1分）に入力</span></div>
+  <div class="step"><span class="n">02</span><span class="t">審査・ご連絡</span><span class="d">2営業日以内に卸価格表をトークでお送りします</span></div>
+  <div class="step"><span class="n">03</span><span class="t">卸価格でご注文</span><span class="d">商品名と数量をトークに送るだけ。定期発注も可</span></div>
+  <div class="step"><span class="n">04</span><span class="t">お届け・ご請求</span><span class="d">最短翌営業日出荷・月末締め請求</span></div>
+ </div>
+ <div class="apply" style="margin-top:48px">
+  <span class="eyebrow">Apply</span>
+  <h3>会員申請は、LINEまたは申請フォームから</h3>
+  <div class="ctas" style="justify-content:center"><a class="btn line" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINEで友だち追加して申請</a><a class="btn solid" href="https://forms.cloud.microsoft/r/f9vsHdP6Bw" target="_blank" rel="noopener">申請フォームに入力する</a></div>
+  <img class="qr" src="img/qr.png" alt="LINE 友だち追加 QRコード">
+  <small style="display:block;margin-bottom:6px">会員申請をもって<a href="terms.html" style="text-decoration:underline">会員規約（取引条件）</a>に同意いただいたものとみなします。</small>
+  <small>LINE ID：@313pamoo　｜　応答時間 平日 10:00〜18:00</small>
+ </div>
+</div></section>
+<footer><div class="wrap">
+ <div><div class="fbrand"><img class="em" src="img/emblem_rev.png" alt=""><img src="img/logo_rev.svg" alt="BACKBAR"></div><div>BACKBAR（株式会社STRATECTA 美容事業部）　〒530-0001 大阪府大阪市北区梅田1-2-2 大阪駅前第2ビル12-12　TEL 06-7777-6267</div><div>P-UP シリーズ 製造元：株式会社フロンテ／輸入発売元（CHEMISTRY）：大阪ブラシ株式会社</div><div style="margin-top:8px"><a href="./">商品カタログ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a></div></div>
+ <div style="align-self:flex-end">© STRATECTA Inc.</div>
+</div></footer>
+<a class="fab btn line" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINEで申請</a>
+</body>
+</html>
