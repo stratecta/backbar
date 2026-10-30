@@ -131,13 +131,25 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 .regen.alt{background:var(--paper);border-top:0}
 .regen.alt .doc{background:#fff}
 .regen.alt .facts div{background:var(--paper)}
+
+.hero .brands{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hero .bt{background:#fff;text-decoration:none;color:var(--ink);padding:20px 20px 22px;display:flex;flex-direction:column;gap:4px;transition:.2s}
+.hero .bt:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,27,27,.08)}
+.hero .bi{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--paper);margin-bottom:14px;overflow:hidden}
+.hero .bi img{max-height:86%;max-width:86%;object-fit:contain}
+.hero .bi.three img{max-width:44%;margin:0 -6%}
+.hero .bn{font-family:'Jost',sans-serif;font-weight:300;font-size:22px;color:var(--copper)}
+.hero .bt b{font-family:'Shippori Mincho',serif;font-weight:500;font-size:20px}
+.hero .bd{font-size:12px;color:var(--mute)}
+@media(max-width:900px){.hero .brands{order:2}.hero .bt{padding:14px}.hero .bt b{font-size:16px}.hero .bd{font-size:11px}}
+.pupHead{padding-bottom:0}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
  <a href="#top" class="brand"><img class="em" src="img/emblem.png" alt=""><img src="img/logo.svg" alt="BACKBAR"></a>
  <nav>
-  <a href="#regen">幹細胞上清液</a><a href="#catalog">商品カタログ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a>
+  <a href="#regen">幹細胞上清液</a><a href="#pup">P-UP シリーズ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a>
   <a class="btn solid" href="https://forms.cloud.microsoft/r/f9vsHdP6Bw" target="_blank" rel="noopener">会員申請（無料）</a>
  </nav>
 </div></header>
@@ -145,16 +157,19 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 <section id="top" class="hero"><div class="wrap">
  <div style="display:flex;flex-direction:column;gap:24px">
   <span class="eyebrow">Salon &amp; Dealer Supply — Members Only</span>
-  <h1 class="serif">髪を乾かす。<br>その瞬間が、美容になる。</h1>
-  <p>超美振動 P-UP テラヘルツ波を搭載したドライヤー・ブラシ・タオル。施術で体感いただいたお客様に、ご自宅でも続けていただける P-UP シリーズ全70品目を、サロンと、サロンを支える美容ディーラーに、会員専用の卸価格でお届けします。</p>
-  <div class="ctas"><a class="btn solid" href="https://forms.cloud.microsoft/r/f9vsHdP6Bw" target="_blank" rel="noopener">会員申請（無料・1分）</a><a class="btn" href="#catalog">商品カタログを見る</a><a class="btn line" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINE友だち追加</a></div>
+  <h1 class="serif">バックバーに並ぶ、<br>プロのための商材を。</h1>
+  <p>再生医療の現場で使われる「幹細胞上清液」と、超美振動テラヘルツの「P-UP シリーズ」。施術で体感いただき、ご自宅でも続けていただける商材を、サロンと、サロンを支える美容ディーラーに、会員専用の卸価格でお届けします。</p>
+  <div class="ctas"><a class="btn solid" href="https://forms.cloud.microsoft/r/f9vsHdP6Bw" target="_blank" rel="noopener">会員申請（無料・1分）</a><a class="btn" href="#regen">取扱商品を見る</a><a class="btn line" href="https://lin.ee/WGRexV0" target="_blank" rel="noopener">LINE友だち追加</a></div>
   <small style="font-size:12px;color:var(--mute)">卸価格・ロット特典は会員限定（サロン・美容ディーラー）。申請フォームからお申し込みください。</small>
  </div>
- <div class="img"><img src="img/hero_dryer.png" alt="CHEMISTRY P-UP XTERA テラヘルツドライヤー"></div>
+ <div class="brands">
+  <a class="bt" href="#regen"><div class="bi three"><img src="img/sc_adipose.png" alt=""><img src="img/sc_dental.png" alt=""><img src="img/sc_cord.png" alt=""></div><span class="bn">01</span><b>幹細胞上清液</b><span class="bd">再生医療 × 美容　4品目</span></a>
+  <a class="bt" href="#pup"><div class="bi"><img src="img/hero_dryer.png" alt=""></div><span class="bn">02</span><b>P-UP シリーズ</b><span class="bd">超美振動テラヘルツ　66品目</span></a>
+ </div>
 </div></section>
 
 <section id="regen" class="regen"><div class="wrap">
- <div class="sec-head"><div><span class="eyebrow">Regenerative Beauty</span><h2 class="serif">再生医療の現場で使われる幹細胞上清液を、<br>P-UP 水素イオン導入水とともに。</h2></div></div>
+ <div class="sec-head"><div><span class="eyebrow">Brand 01 — Regenerative Beauty</span><h2 class="serif">再生医療の現場で使われる幹細胞上清液を、<br>P-UP 水素イオン導入水とともに。</h2></div></div>
  <div class="lead">
   <p>脂肪由来・歯髄由来・臍帯由来の3種のヒト幹細胞培養上清液を、防腐剤・保存料を使わないフリーズドライで製剤化。施術時に P-UP 水素イオン導入水（1回2cc）で溶解してお使いいただく、サロン向けの「バックエイジングシステム」用製品です。製品は大阪再生医療センター内の CPC（細胞培養加工施設）で製品化され、主要サイトカインの含有量を表示しています。ヘアメニューに加える高単価・短時間の新メニューとして、既存の P-UP シリーズと同じ窓口で取り扱います。</p>
   <div class="facts">
@@ -181,22 +196,24 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
  </div>
 </div></section>
 
-<section id="featured"><div class="wrap">
- <div class="sec-head"><div><span class="eyebrow">Lineup</span><h2 class="serif">主力商品</h2></div><span class="sub">サロンで体験 → ご自宅で続ける、の導線がつくれる12品</span></div>
- <div class="grid" id="featGrid"></div>
-</div></section>
-
-<section class="dark tech"><div class="wrap">
+<section id="pup" class="dark tech"><div class="wrap">
  <div style="display:flex;flex-direction:column;gap:16px">
-  <span class="eyebrow">Technology</span>
+  <span class="eyebrow">Brand 02 — P-UP Series</span>
   <h2 class="serif">超美振動 P-UP テラヘルツ波を、<br>ドライヤーからタオルまで。</h2>
   <p>1秒間に1兆回の振動で、髪表面と空気中の水分を細分化し毛髪内部へ浸透。ドライヤー・ブラシ・タオル・ヘアケアが同じ技術を共有しているため、施術から自宅ケアまで一本の線で提案できます。</p>
  </div>
- <div class="stats"><div><b>1兆</b><span>回／秒の振動</span></div><div><b>9</b><span>カテゴリー</span></div><div><b>70</b><span>品目</span></div></div>
+ <div class="stats"><div><b>1兆</b><span>回／秒の振動</span></div><div><b>8</b><span>カテゴリー</span></div><div><b>66</b><span>品目</span></div></div>
 </div></section>
 
+<section id="featured"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">Lineup</span><h2 class="serif">P-UP 主力商品</h2></div><span class="sub">サロンで体験 → ご自宅で続ける、の導線がつくれる12品</span></div>
+ <div class="grid" id="featGrid"></div>
+</div></section>
+
+
+
 <section id="catalog" class="white"><div class="wrap">
- <div class="sec-head"><div><span class="eyebrow">Catalog</span><h2 class="serif">商品カタログ</h2></div><span class="sub">全70品目・9カテゴリー｜価格は希望小売価格（税込）。卸価格は会員限定</span></div>
+ <div class="sec-head"><div><span class="eyebrow">Catalog</span><h2 class="serif">P-UP 商品カタログ</h2></div><span class="sub">全66品目・8カテゴリー｜価格は希望小売価格（税込）。卸価格は会員限定</span></div>
  <div class="tabs" id="tabs"></div>
  <div class="grid" id="catGrid"></div>
 </div></section>
@@ -221,7 +238,8 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 <script>
 const ITEMS=[{"jan": "4957552911024", "name": "P-UP XTERA ケミストリー テラヘルツ×シルクコートレッド", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "", "jo": 22000, "img": "img/4957552911024.png", "note": ""}, {"jan": "4957552911031", "name": "P-UP XTERA ケミストリー テラヘルツ×シルクコートブラック", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "", "jo": 22000, "img": "img/4957552911031.png", "note": ""}, {"jan": "4957552910959", "name": "P-UP XTERA テラヘルツドライヤー 2G", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 24000, "img": "img/4957552910959.png", "note": ""}, {"jan": "4957552911130", "name": "P-UP XTERA テラヘルツ ドライヤーケミストリー", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "", "jo": 33000, "img": "img/4957552911130.png", "note": ""}, {"jan": "4957552908307", "name": "P-UP XTERA テラヘルツ パドルブラシ", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 8000, "img": "img/4957552908307.png", "note": ""}, {"jan": "4957552908314", "name": "P-UP XTERA テラヘルツ クッション ブラシ", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 7000, "img": "img/4957552908314.png", "note": ""}, {"jan": "4957552908338", "name": "P-UP XTERA テラヘルツ ロールブラシケミストリー62mm", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 9800, "img": "img/4957552908338.png", "note": ""}, {"jan": "4957552908345", "name": "P-UP XTERA テラヘルツ ロールブラシケミストリー48mm", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 8800, "img": "img/4957552908345.png", "note": ""}, {"jan": "4957552908352", "name": "P-UP XTERA テラヘルツ ロールブラシケミストリー40mm", "cat": "XTERA テラヘルツ", "unit": "1ヶ", "lot": "11＋1", "jo": 7800, "img": "img/4957552908352.png", "note": ""}, {"jan": "4560440253429", "name": "P-UP CREA シャンプーブラシ", "cat": "CREA ヘアツール", "unit": "1ヶ", "lot": "11＋1", "jo": 6800, "img": "img/4560440253429.png", "note": ""}, {"jan": "4560440252545", "name": "P-UP CREA トリートメントコーム", "cat": "CREA ヘアツール", "unit": "1ヶ", "lot": "", "jo": 4500, "img": "img/4560440252545.png", "note": ""}, {"jan": "4560440253085", "name": "P-UP CREA トリートメントコーム ミニ", "cat": "CREA ヘアツール", "unit": "1ヶ", "lot": "", "jo": 1800, "img": "img/4560440253085.png", "note": ""}, {"jan": "4560440253917", "name": "P-UP CREA カットコームショート", "cat": "CREA ヘアツール", "unit": "1ヶ", "lot": "11＋1", "jo": 4500, "img": "img/4560440253917.png", "note": ""}, {"jan": "4560440253764", "name": "P-UP CREA カットコームロング", "cat": "CREA ヘアツール", "unit": "1ヶ", "lot": "11＋1", "jo": 4500, "img": "img/4560440253764.png", "note": ""}, {"jan": "4560440251074", "name": "P-UP ヘッドエステシャンプー480ml", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 5800, "img": null, "note": ""}, {"jan": "4560440250169", "name": "P-UP ヘッドエステシャンプー 詰替用1000ml", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 9200, "img": null, "note": ""}, {"jan": "4560440253993", "name": "P-UP CREA 水素トリートメント450g", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 5800, "img": null, "note": ""}, {"jan": "4560440254020", "name": "P-UP CREA 水素トリートメント1000g", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 9200, "img": null, "note": ""}, {"jan": "4560440254006", "name": "P-UP CREA 水素イオンシャンプーⅡ480ml", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 4800, "img": "img/4560440254006.png", "note": ""}, {"jan": "4560440254037", "name": "P-UP CREA 水素イオンシャンプーⅡ1,000ml", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440254037.png", "note": ""}, {"jan": "4560440254310", "name": "P-UP CREA 水素イオントリートメントⅡ480g", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 4800, "img": "img/4560440254310.png", "note": ""}, {"jan": "4560440254334", "name": "P-UP CREA 水素イオントリートメントⅡ1,000g", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440254334.png", "note": ""}, {"jan": "4560440250510", "name": "育毛剤 P-UP ヘアーリッチEX100ml", "cat": "ヘア・スカルプケア", "unit": "1ヶ", "lot": "", "jo": 8400, "img": "img/4560440250510.png", "note": ""}, {"jan": "4560440253009", "name": "P-UP CREA マルチウォーター200ml", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "11＋1", "jo": 3000, "img": "img/4560440253009.png", "note": ""}, {"jan": "4560440252866", "name": "P-UP CREA マルチウォーター 詰替用500ml", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "11＋1", "jo": 5800, "img": "img/4560440252866.png", "note": ""}, {"jan": "4560440252811", "name": "P-UP バランシングローション180ml", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "11＋1", "jo": 4500, "img": null, "note": ""}, {"jan": "4560440253320", "name": "P-UP クリア クレンジングジェル150g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "11＋1", "jo": 3800, "img": "img/4560440253320.png", "note": ""}, {"jan": "4560440250718", "name": "洗顔石鹸 P-UP ル・ソワン100g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "", "jo": 2700, "img": "img/4560440250718.png", "note": ""}, {"jan": "4560440250534", "name": "薬用美白クリーム P-UP ル・ブラン50g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "", "jo": 6500, "img": "img/4560440250534.png", "note": ""}, {"jan": "4560440253108", "name": "P-UP ボディフィーリング入浴剤25g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "", "jo": 430, "img": "img/4560440253108.png", "note": ""}, {"jan": "4560440250893", "name": "P-UP ボディフィーリング入浴剤600g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "", "jo": 6500, "img": "img/4560440250893.png", "note": ""}, {"jan": "4560440253122", "name": "P-UP ボディフィーリング入浴剤1,000g", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "", "jo": 9000, "img": "img/4560440253122.png", "note": ""}, {"jan": "4560440253740", "name": "P-UP イージーリフトローラーシルバー", "cat": "スキン・ボディケア", "unit": "1ヶ", "lot": "10＋2", "jo": 12000, "img": "img/4560440253740.png", "note": ""}, {"jan": "4560440254068", "name": "P-UP リカバリー アーシングソックスメンズ 25〜27cm", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 3600, "img": "img/4560440254068.png", "note": ""}, {"jan": "4560440254075", "name": "P-UP リカバリー アーシングソックスレディース 23〜25cm", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 3600, "img": "img/4560440254075.png", "note": ""}, {"jan": "4560440254044", "name": "P-UP リカバリー アーシングボディーウォーマーフリーサイズ", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 11800, "img": null, "note": ""}, {"jan": "4560440254051", "name": "P-UP リカバリー アーシングショーツフリーサイズ", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 11800, "img": null, "note": ""}, {"jan": "4560440253139", "name": "P-UP リカバリーインソール女性用 22〜25cm", "cat": "リカバリーウェア・グッズ", "unit": "1足", "lot": "11＋1", "jo": 6800, "img": "img/4560440253139.png", "note": "男性用・女性用を合わせて12ヶロット内でサイズアソート可"}, {"jan": "4560440253214", "name": "P-UP リカバリーインソール男性用 24〜27cm", "cat": "リカバリーウェア・グッズ", "unit": "1足", "lot": "11＋1", "jo": 6800, "img": "img/4560440253214.png", "note": "男性用・女性用を合わせて12ヶロット内でサイズアソート可"}, {"jan": "4560440253146", "name": "P-UP リカバリーアイマスクフリーサイズ", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "11＋1", "jo": 2800, "img": "img/4560440253146.png", "note": ""}, {"jan": "4560440254105", "name": "P-UP リカバリー アーシングピローケース", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 8800, "img": null, "note": ""}, {"jan": "4560440254204", "name": "P-UP リカバリーピロー", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 12800, "img": null, "note": ""}, {"jan": "4560440253177", "name": "P-UP リカバリー ロング腹巻ブラック 1枚入", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440253177.png", "note": "フリーサイズ（ウエスト 60〜100cm）"}, {"jan": "4560440253191", "name": "P-UP リカバリー ロング腹巻グレー 1枚入", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440253191.png", "note": "フリーサイズ（ウエスト 60〜100cm）"}, {"jan": "4560440253184", "name": "P-UP リカバリー ロングひざサポーターブラック 2枚入", "cat": "リカバリーウェア・グッズ", "unit": "2枚入", "lot": "", "jo": 9800, "img": "img/4560440253184.png", "note": "フリーサイズ"}, {"jan": "4560440253207", "name": "P-UP リカバリー ひざサポーターグレー 2枚入", "cat": "リカバリーウェア・グッズ", "unit": "2枚入", "lot": "", "jo": 8800, "img": "img/4560440253207.png", "note": "フリーサイズ"}, {"jan": "4560440253603", "name": "P-UP リカバリー レギンスブラック M〜L", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440253603.png", "note": ""}, {"jan": "4560440253610", "name": "P-UP リカバリー レギンスブラック LL", "cat": "リカバリーウェア・グッズ", "unit": "1ヶ", "lot": "", "jo": 8800, "img": "img/4560440253610.png", "note": ""}, {"jan": "4560440253238", "name": "P-UP CREA メディタオルグレー", "cat": "CREA メディ", "unit": "1ヶ", "lot": "11＋1", "jo": 1800, "img": "img/4560440253238.png", "note": ""}, {"jan": "4560440253221", "name": "P-UP CREA メディタオルベージュ", "cat": "CREA メディ", "unit": "1ヶ", "lot": "11＋1", "jo": 1800, "img": "img/4560440253221.png", "note": ""}, {"jan": "4560440255368", "name": "P-UP CREA メディタオルブラウン", "cat": "CREA メディ", "unit": "1ヶ", "lot": "11＋1", "jo": 1800, "img": "img/4560440255368.png", "note": ""}, {"jan": "4560440253665", "name": "P-UP CREA メディケットグレー", "cat": "CREA メディ", "unit": "1ヶ", "lot": "11＋1", "jo": 4500, "img": "img/4560440253665.png", "note": ""}, {"jan": "4560440253313", "name": "P-UP CREA メディケットベージュ", "cat": "CREA メディ", "unit": "1ヶ", "lot": "11＋1", "jo": 4500, "img": "img/4560440253313.png", "note": ""}, {"jan": "4560440254211", "name": "P-UP CREA メディソフト", "cat": "CREA メディ", "unit": "1ヶ", "lot": "", "jo": 18000, "img": "img/4560440254211.png", "note": ""}, {"jan": "4560440250312", "name": "テラアクティブステッカーゴールド", "cat": "テラアクティブステッカー", "unit": "3シート30シール入", "lot": "11＋1", "jo": 3000, "img": "img/4560440250312.png", "note": ""}, {"jan": "4560440251104", "name": "テラアクティブステッカーベージュ", "cat": "テラアクティブステッカー", "unit": "3シート30シール入", "lot": "11＋1", "jo": 3000, "img": "img/4560440251104.png", "note": ""}, {"jan": "4560440251203", "name": "テラアクティブステッカーミディアム", "cat": "テラアクティブステッカー", "unit": "6シート18シール入", "lot": "11＋1", "jo": 3000, "img": "img/4560440251203.png", "note": ""}, {"jan": "4560440250848", "name": "テラアクティブステッカーラージ", "cat": "テラアクティブステッカー", "unit": "6シート12シール入", "lot": "11＋1", "jo": 3000, "img": "img/4560440250848.png", "note": ""}, {"jan": "4560440252873", "name": "P-UP パワーウォッシュ 日常用480ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "", "jo": 1680, "img": "img/4560440252873.png", "note": ""}, {"jan": "4560440252804", "name": "P-UP パワーウォッシュ しつこい汚れ用（原液）480ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "", "jo": 2200, "img": "img/4560440252804.png", "note": ""}, {"jan": "4560440252781", "name": "P-UP パワーウォッシュ 詰替え用（原液）1000ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "", "jo": 3200, "img": "img/4560440252781.png", "note": ""}, {"jan": "4560440251210", "name": "P-UP バイオペースト歯磨き剤60g", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "11＋1", "jo": 1680, "img": "img/4560440251210.png", "note": ""}, {"jan": "4560440253016", "name": "P-UP バイオチュアブル30粒入", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "11＋1", "jo": 3800, "img": "img/4560440253016.png", "note": ""}, {"jan": "4560440252989", "name": "P-UP 水素&シリカミネラルイオンウォーター100ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "11＋1", "jo": 6800, "img": "img/4560440252989.png", "note": ""}, {"jan": "4560440254341", "name": "P-UP リカバリー バイオハンドゲル30ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "", "jo": 2600, "img": null, "note": ""}, {"jan": "4560440254327", "name": "P-UP リカバリー バイオハンドゲル300ml", "cat": "ホーム・ヘルスケア", "unit": "1ヶ", "lot": "", "jo": 12000, "img": "img/4560440254327.png", "note": ""}, {"jan": "SC-ADIPOSE", "name": "KBSC 脂肪由来幹細胞上清液（フリーズドライ）1ml", "cat": "幹細胞上清液", "unit": "1本（1ml）", "lot": "", "jo": 28000, "img": "img/sc_adipose.png", "note": "溶解液：P-UP水素＆ケイ素イオン溶解液（1回2cc）。1本で1〜3回分", "desc": "脂肪組織由来の間葉系幹細胞を無血清培地で培養した培養上清液を、フリーズドライ（凍結乾燥）で粉末化したもの。EGF など皮膚・毛髪領域で用いられる成長因子を含みます。大阪再生医療センター（久保周敬医師監修）内の CPC（細胞培養加工施設）で製品化。防腐剤・保存料不使用、未開封で常温2年保存。"}, {"jan": "SC-DENTAL", "name": "KBSC 歯髄由来幹細胞上清液（フリーズドライ）1ml", "cat": "幹細胞上清液", "unit": "1本（1ml）", "lot": "", "jo": 35000, "img": "img/sc_dental.png", "note": "溶解液：P-UP水素＆ケイ素イオン溶解液（1回2cc）。1本で1〜3回分", "desc": "乳歯の歯髄由来幹細胞を培養した上清液のフリーズドライ製剤。β-NGF など神経系の成長因子を多く含むのが特徴です。大阪再生医療センター内 CPC で製品化。防腐剤・保存料不使用、未開封で常温2年保存。"}, {"jan": "SC-CORD", "name": "KBSC 臍帯由来幹細胞上清液（フリーズドライ）1ml", "cat": "幹細胞上清液", "unit": "1本（1ml）", "lot": "", "jo": 47000, "img": "img/sc_cord.png", "note": "溶解液：P-UP水素＆ケイ素イオン溶解液（1回2cc）。1本で1〜3回分", "desc": "臍帯由来幹細胞を培養した上清液のフリーズドライ製剤。3種の中でサイトカインの種類・含有量がもっとも多いハイグレード品。大阪再生医療センター内 CPC で製品化。防腐剤・保存料不使用、未開封で常温2年保存。"}, {"jan": "SC-SOLVENT", "name": "P-UP 水素＆ケイ素イオン溶解液 10ml（5回分）", "cat": "幹細胞上清液", "unit": "1本（10ml）", "lot": "", "jo": null, "img": null, "note": "幹細胞上清液（フリーズドライ）専用の溶解液。1回2cc・1本で5回分", "desc": "海洋深層水に水素（オキソニウムイオン）とイオン化ケイ素をブレンドした、幹細胞上清液専用の溶解液。フリーズドライの容器に2ccを入れて10回ほど振って溶解し、吸引器または点鼻容器でお使いください。溶解後は冷蔵保管し、目安として1週間以内に使い切ってください。"}];
 const FEAT=["4957552911130", "4957552908307", "4957552908314", "4957552908338", "4560440254006", "4560440254310", "4560440253429", "4560440250510", "4560440253238", "4560440253139", "4560440254068", "4560440250312"];
-const CATS=[...new Set(ITEMS.map(i=>i.cat))];
+const PUP=ITEMS.filter(i=>i.cat!=='幹細胞上清液');
+const CATS=[...new Set(PUP.map(i=>i.cat))];
 const yen0=n=>'¥'+n.toLocaleString('ja-JP');const yen=n=>n==null?'会員価格はトークでご案内':yen0(Math.round(n*1.1));
 const DRYER={'型番':'PXD-3G','電源':'AC100-240V（ワールドボルテージ）','消費電力':'1200W','温風温度':'120・80・50℃','質量':'約310g（コード・ブラシ含まず）','付属品':'ノズル・ポーチ・掃除用ブラシ'};
 function card(i){
@@ -232,10 +250,10 @@ document.getElementById('regenGrid').innerHTML=ITEMS.filter(i=>i.cat==='幹細�
 document.getElementById('featGrid').innerHTML=FEAT.map(j=>ITEMS.find(i=>i.jan===j)).filter(Boolean).map(card).join('');
 const tabs=document.getElementById('tabs');
 function render(cat){
- document.getElementById('catGrid').innerHTML=ITEMS.filter(i=>cat==='all'||i.cat===cat).map(card).join('');
+ document.getElementById('catGrid').innerHTML=PUP.filter(i=>cat==='all'||i.cat===cat).map(card).join('');
  [...tabs.children].forEach(b=>b.classList.toggle('on',b.dataset.c===cat));
 }
-tabs.innerHTML=[['all','すべて（'+ITEMS.length+'）'],...CATS.map(c=>[c,c+'（'+ITEMS.filter(i=>i.cat===c).length+'）'])].map(([c,l])=>`<button data-c="${c}" onclick="render('${c}')">${l}</button>`).join('');
+tabs.innerHTML=[['all','すべて（'+PUP.length+'）'],...CATS.map(c=>[c,c+'（'+PUP.filter(i=>i.cat===c).length+'）'])].map(([c,l])=>`<button data-c="${c}" onclick="render('${c}')">${l}</button>`).join('');
 render('all');
 function openModal(jan){
  const i=ITEMS.find(x=>x.jan===jan);
