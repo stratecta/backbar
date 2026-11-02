@@ -48,6 +48,22 @@ section{padding:80px 0}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:40px}
 .sec-head h2{margin:6px 0 0;font-size:clamp(24px,3vw,34px)}
 .sec-head .sub{font-size:13px;color:var(--mute)}
+.pick{background:#fff;padding:88px 0}
+.pick .wrap{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.pick .img{background:var(--paper);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:40px;position:relative}
+.pick .img img{max-width:100%;max-height:100%;object-fit:contain}
+.pick .tag{position:absolute;top:12px;left:12px;background:var(--copper);color:#fff;font-size:11px;letter-spacing:.14em;padding:5px 10px;line-height:1}
+.pick h2{margin:6px 0 12px;font-size:clamp(24px,3vw,32px);line-height:1.5}
+.pick .lead{font-size:14px;line-height:2;color:#4A4541;margin:0 0 22px}
+.pick ol{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:12px}
+.pick li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline;border-top:1px solid var(--line);padding-top:12px}
+.pick li b.n{font-family:Jost,sans-serif;font-weight:300;font-size:20px;color:var(--copper)}
+.pick li strong{display:block;font-family:'Shippori Mincho',serif;font-weight:500;font-size:16px;margin-bottom:2px}
+.pick li span{font-size:13px;color:var(--mute);line-height:1.8}
+.pick .pr{font-size:13px;margin:0 0 18px}
+.pick .pr b{font-family:'Shippori Mincho',serif;font-size:22px;font-weight:500;margin-right:4px}
+.pick .ctas{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.pick{padding:56px 0}.pick .wrap{grid-template-columns:1fr;gap:28px}.pick .img{padding:28px}}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .grid.g3{grid-template-columns:repeat(3,1fr)}
 .grid.g5{grid-template-columns:repeat(5,1fr);gap:22px}
@@ -213,6 +229,22 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
   <p>1秒間に1兆回の振動で、髪表面と空気中の水分を細分化し毛髪内部へ浸透。ドライヤー・ブラシ・タオル・ヘアケアが同じ技術を共有しているため、施術から自宅ケアまで一本の線で提案できます。</p>
  </div>
  <div class="stats"><div><b>1兆</b><span>回／秒の振動</span></div><div><b>8</b><span>カテゴリー</span></div><div><b>65</b><span>品目</span></div></div>
+</div></section>
+
+<section id="pickup" class="pick"><div class="wrap">
+ <div class="img"><span class="tag">注目商品</span><img src="img/4957552911130.png" alt="P-UP XTERA テラヘルツ ドライヤーケミストリー"></div>
+ <div>
+  <span class="eyebrow">Pick Up — CHEMISTRY</span>
+  <h2 class="serif">P-UP テラヘルツ<br>ドライヤーケミストリー</h2>
+  <p class="lead">美容師向け YouTube チャンネルの「高級ドライヤー4機種 徹底比較」で、モデルさんが半頭ずつ乾かし比べたうえで選んだのが、4機種の中でいちばん手頃なケミストリーでした。</p>
+  <ol>
+   <li><b class="n">01</b><div><strong>まとまりのある仕上がり</strong><span>P-UP®とグラフェンの電磁特性で、水分バランスに着目したドライをサポート。</span></div></li>
+   <li><b class="n">02</b><div><strong>速乾なのに、やさしい風</strong><span>1200Wの風量で、低温でも効率よく乾かします。</span></div></li>
+   <li><b class="n">03</b><div><strong>店販しやすい価格と折りたたみ</strong><span>約310gの軽量・フォールディング設計。プロ仕様の仕上がりを手の届く価格で。</span></div></li>
+  </ol>
+  <p class="pr">希望小売価格 <b>¥36,300</b>（税込）</p>
+  <div class="ctas"><a class="btn solid" href="https://youtu.be/Gvs54IGjQfE" target="_blank" rel="noopener">比較動画を見る（YouTube）</a><button class="btn" style="font:inherit;font-size:13px;letter-spacing:.12em;cursor:pointer" onclick="openModal('4957552911130')">商品の詳細</button></div>
+ </div>
 </div></section>
 
 <section id="featured"><div class="wrap">
