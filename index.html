@@ -248,7 +248,7 @@ const DRYER={'型番':'PXD-3G','電源':'AC100-240V（ワールドボルテー�
 function card(i){
  const bd=i.best?'<span class="best">売れ筋</span>':'';
  const ph=i.img?`<div class="ph">${bd}<img loading="lazy" src="${i.img}" alt="${i.name}"></div>`:`<div class="ph none">${bd}写真準備中</div>`;
- return `<button class="card" onclick="openModal('${i.jan}')">${ph}<div style="display:flex;flex-direction:column;gap:4px"><span class="cat">${i.cat}</span><span class="nm">${i.name}</span><span class="meta">${i.unit}${i.lot?'・ロット特典 '+i.lot:''}</span><span class="price">${i.jo==null?'価格は会員トークでご案内':'希望小売価格 '+yen(i.jo)+'（税込）'}</span></div></button>`;
+ return `<button class="card" onclick="openModal('${i.jan}')">${ph}<div style="display:flex;flex-direction:column;gap:4px"><span class="cat">${i.cat}</span><span class="nm">${i.name}</span><span class="meta">${i.unit}${i.lot?'・ロット特典 '+i.lot:''}</span><span class="price">${i.cat==='幹細胞上清液'?'希望小売価格 確認中':i.jo==null?'価格は会員トークでご案内':'希望小売価格 '+yen(i.jo)+'（税込）'}</span></div></button>`;
 }
 document.getElementById('regenGrid').innerHTML=ITEMS.filter(i=>i.cat==='幹細胞上清液').map(card).join('');
 document.getElementById('featGrid').innerHTML=FEAT.map(j=>ITEMS.find(i=>i.jan===j)).filter(Boolean).map(card).join('');
@@ -263,7 +263,7 @@ function openModal(jan){
  const i=ITEMS.find(x=>x.jan===jan);
  document.getElementById('mPh').innerHTML=(i.best?'<span class="best">売れ筋</span>':'')+(i.img?`<img src="${i.img}" alt="${i.name}">`:'<span style="color:#6B6560;font-size:12px">写真準備中</span>');
  document.getElementById('mCat').textContent=i.cat; document.getElementById('mName').textContent=i.name;
- let rows=[[i.jan.startsWith('SC-')?'商品コード':'JANコード',i.jan],['販売単位',i.unit]]; if(i.jo!=null)rows.push(['希望小売価格',yen(i.jo)+'（税込）']); else rows.push(['価格','会員トークでご案内（サロンメニュー価格の目安は価格表に記載）']);
+ let rows=[[i.jan.startsWith('SC-')?'商品コード':'JANコード',i.jan],['販売単位',i.unit]]; if(i.cat==='幹細胞上清液')rows.push(['希望小売価格','確認中']); else if(i.jo!=null)rows.push(['希望小売価格',yen(i.jo)+'（税込）']); else rows.push(['価格','会員トークでご案内（サロンメニュー価格の目安は価格表に記載）']);
  if(i.lot)rows.push(['ロット特典',i.lot+'（会員サロン限定）']);
  if(i.note)rows.push(['備考',i.note]);
  if(i.jan==='4957552911130')rows=rows.concat(Object.entries(DRYER));
