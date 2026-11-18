@@ -31,6 +31,9 @@ footer .fbrand .em{height:52px}
 @media(max-width:600px){.nav .brand .em{height:46px}.nav img{height:36px}}
 .nav nav{display:flex;gap:22px;align-items:center;font-size:13px;letter-spacing:.08em}
 .nav nav a{text-decoration:none}
+.nav nav a:not(.btn){padding:14px 0;margin:-14px 0}
+.nav .btn{white-space:nowrap}
+@media(max-width:360px){.nav .btn{padding:9px 12px;letter-spacing:.06em}}
 .btn{display:inline-block;text-decoration:none;padding:14px 30px;font-size:13px;letter-spacing:.12em;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:.2s}
 .btn.solid{background:var(--ink);color:var(--paper)}
 .btn.solid:hover{background:#000}
@@ -64,9 +67,10 @@ section{padding:80px 0}
 .pick .pr b{font-family:'Shippori Mincho',serif;font-size:22px;font-weight:500;margin-right:4px}
 .pick .ctas{display:flex;gap:12px;flex-wrap:wrap}
 @media(max-width:900px){.pick{padding:56px 0}.pick .wrap{grid-template-columns:1fr;gap:28px}.pick .img{padding:28px}}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.grid.g3{grid-template-columns:repeat(3,1fr)}
-.grid.g5{grid-template-columns:repeat(5,1fr);gap:22px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.grid>*{min-width:0}
+.grid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.g5{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}
 .fgroup+.fgroup{margin-top:56px}
 .fh{font-family:'Shippori Mincho',serif;font-size:20px;font-weight:500;margin:0 0 20px;display:flex;align-items:baseline;gap:10px}
 .fh span{font-family:Jost,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--copper)}
@@ -75,7 +79,7 @@ section{padding:80px 0}
 .white .card .ph{background:var(--paper)}
 .card .ph img{max-width:100%;max-height:100%;object-fit:contain}
 .card .ph img[src$="sc_adipose.png"],.card .ph img[src$="sc_dental.png"],.card .ph img[src$="sc_cord.png"]{max-width:72%;max-height:72%}
-.card .ph .best,.modal .ph .best{position:absolute;top:6px;left:6px;z-index:1;background:var(--copper);color:#fff;font-size:9.5px;letter-spacing:.1em;padding:3px 6px;line-height:1}
+.card .ph .best,.modal .ph .best{position:absolute;top:6px;left:6px;z-index:1;background:var(--copper);color:#fff;font-size:11px;letter-spacing:.1em;padding:3px 6px;line-height:1}
 .card .ph.hasbest{padding-top:28px}
 @media(max-width:600px){.card .nm{font-size:14.5px}}
 .tabs button.hot{border-color:var(--copper);color:var(--copper)}
@@ -84,7 +88,7 @@ section{padding:80px 0}
 .card .cat{font-family:Jost,sans-serif;font-size:11px;letter-spacing:.2em;color:var(--copper)}
 .card .nm{word-break:keep-all;overflow-wrap:anywhere;font-family:'Shippori Mincho',serif;font-size:16px;line-height:1.45}
 .card .meta{font-size:12px;color:var(--mute)}
-.card .price{font-size:12px}
+.card .price{font-size:12px;word-break:keep-all;overflow-wrap:anywhere}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .tabs button{font:inherit;font-size:12px;letter-spacing:.08em;padding:9px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 .tabs button.on{background:var(--ink);color:var(--paper)}
@@ -131,7 +135,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 @media (max-width:900px){
  .hero .wrap{grid-template-columns:1fr;padding-top:40px;padding-bottom:48px}
  .hero .img{order:-1;padding:24px}
- .grid,.grid.g3,.grid.g5{grid-template-columns:repeat(2,1fr);gap:18px}
+ .grid,.grid.g3,.grid.g5{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
  .tech .wrap{grid-template-columns:1fr}
  .cols3,.cols4{grid-template-columns:1fr}
  .nav nav a:not(.btn){display:none}
@@ -170,9 +174,154 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 .hero .bd{font-size:12px;color:var(--mute)}
 @media(max-width:900px){.hero .brands{order:2}.hero .bt{padding:14px}.hero .bt b{font-size:16px}.hero .bd{font-size:11px}}
 .pupHead{padding-bottom:0}
+
+/* ===== v2 design (2026/11/18)：動きと質感。文言・価格・商品は変更なし ===== */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+.prog{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--copper);transform-origin:0 50%;transform:scaleX(0);z-index:40;pointer-events:none}
+header{transition:box-shadow .3s ease,background .3s ease}
+.nav{transition:height .3s var(--ease)}
+header.sc{box-shadow:0 8px 24px rgba(27,27,27,.08)}
+header.sc .nav{height:60px}
+.nav nav a:not(.btn){position:relative}
+.nav nav a:not(.btn):after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--copper);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--ease)}
+.nav nav a:not(.btn):hover:after{transform:scaleX(1)}
+.btn{position:relative;overflow:hidden;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s var(--ease),box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(27,27,27,.14)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--copper);flex:none}
+.modal .eyebrow:before,.card .eyebrow:before{display:none}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:#1B1B1B url(img/hero_bg.jpg) center/cover no-repeat}
+.hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,19,18,.88) 0%,rgba(20,19,18,.66) 45%,rgba(20,19,18,.22) 100%),linear-gradient(0deg,rgba(20,19,18,.55),rgba(20,19,18,0) 40%)}
+.hero .wrap{min-height:min(86vh,760px);padding-top:84px;padding-bottom:96px}
+.hero .wrap{grid-template-columns:1.3fr 1fr}
+.hero h1{font-size:clamp(30px,4.3vw,54px);line-height:1.45;letter-spacing:.02em}
+section{scroll-margin-top:60px}
+.hero p{color:#D9D2C7}
+.hero small{color:#B8B2A8!important}
+.hero .btn{border-color:rgba(246,241,234,.7);color:var(--paper)}
+.hero .btn:hover{background:rgba(246,241,234,.12)}
+.hero .btn.solid{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.hero .btn.solid:hover{background:#fff}
+.hero .btn.line{background:#06C755;border-color:#06C755;color:#fff}
+.hero .btn.line:hover{background:#05b34c}
+.hero .bt{background:rgba(246,241,234,.07);border:1px solid rgba(185,138,90,.45);color:var(--paper);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:transform .45s var(--ease),border-color .3s ease,background .3s ease}
+.hero .bt:hover{transform:translateY(-6px);border-color:var(--copper);background:rgba(246,241,234,.12);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.hero .bi img{transition:transform .7s var(--ease)}
+.hero .bt:hover .bi img{transform:scale(1.06)}
+.hero .bd{color:#B8B2A8}
+.hero .bt b{position:relative;padding-right:22px}
+.hero .bt b:after{content:"→";position:absolute;right:0;top:0;color:var(--copper);font-family:Jost,sans-serif;transition:transform .35s var(--ease)}
+.hero .bt:hover b:after{transform:translateX(5px)}
+.cue{position:absolute;left:50%;bottom:22px;width:1px;height:44px;background:rgba(246,241,234,.25);overflow:hidden}
+.cue:after{content:"";position:absolute;left:0;top:0;width:1px;height:16px;background:var(--copper);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(44px)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .wrap>div:first-child>*{animation:rise .9s var(--ease) both}
+.hero .wrap>div:first-child>*:nth-child(1){animation-delay:.15s}
+.hero .wrap>div:first-child>*:nth-child(2){animation-delay:.3s}
+.hero .wrap>div:first-child>*:nth-child(3){animation-delay:.5s}
+.hero .wrap>div:first-child>*:nth-child(4){animation-delay:.65s}
+.hero .wrap>div:first-child>*:nth-child(5){animation-delay:.8s}
+.hero .bt{animation:rise 1s var(--ease) both}
+.hero .bt:nth-child(1){animation-delay:.7s}
+.hero .bt:nth-child(2){animation-delay:.85s}
+
+/* band */
+.band{background:var(--paper);border-top:1px solid rgba(27,27,27,.12);border-bottom:1px solid rgba(27,27,27,.12);overflow:hidden;padding:14px 0}
+.band div{display:flex;width:max-content;animation:band 46s linear infinite}
+.band span{font-family:Jost,sans-serif;font-weight:300;font-size:13px;letter-spacing:.34em;color:var(--mute);white-space:nowrap;padding-right:56px}
+.band span i{font-style:normal;color:var(--copper);margin-right:56px}
+@keyframes band{to{transform:translateX(-50%)}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .sec-head{position:relative;border-bottom-color:transparent}
+.sec-head:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--line)}
+.js .sec-head:after{transform:scaleX(0);transform-origin:0 50%;transition:transform 1.2s var(--ease) .2s}
+.js .sec-head.in:after{transform:scaleX(1)}
+.sec-head{position:relative}
+
+/* cards */
+.card .ph{overflow:hidden;transition:box-shadow .4s ease}
+.card .ph img{transition:transform .7s var(--ease)}
+.card:hover .ph img{transform:scale(1.07)}
+.card:hover .ph{box-shadow:inset 0 0 0 1px var(--copper)}
+.card .nm{transition:color .25s ease}
+.card:hover .nm{color:var(--copper-d)}
+.card:focus-visible{outline:2px solid var(--copper);outline-offset:4px}
+.js .card{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+.js .card.in{opacity:1;transform:none}
+.tabs button{transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s var(--ease)}
+.tabs button:hover{transform:translateY(-2px)}
+
+/* regen */
+.regen .facts div{transition:background .3s ease}
+.regen .facts div:hover{background:var(--paper)}
+.regen .facts b{color:var(--copper-d)}
+.regen .doc{position:relative}
+.regen .doc img{box-shadow:10px 10px 0 0 var(--copper)}
+@media(max-width:860px){.regen .doc img{box-shadow:8px 8px 0 0 var(--copper)}}
+
+/* tech */
+.tech{position:relative;overflow:hidden}
+.tech canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.tech .wrap{position:relative}
+.stats{background:rgba(246,241,234,.16)}
+.stats div{background:rgba(27,27,27,.86);padding:38px 16px}
+.stats b{font-size:clamp(36px,4.4vw,56px);line-height:1.2;font-variant-numeric:tabular-nums}
+
+/* pick */
+.pick .img{overflow:hidden}
+.pick .img:before{content:"";position:absolute;left:50%;top:50%;width:78%;aspect-ratio:1/1;border:1px solid rgba(185,138,90,.55);border-radius:50%;transform:translate(-50%,-50%);animation:ring 9s ease-in-out infinite}
+.pick .img:after{content:"";position:absolute;left:50%;top:50%;width:54%;aspect-ratio:1/1;border:1px solid rgba(185,138,90,.3);border-radius:50%;transform:translate(-50%,-50%);animation:ring 9s ease-in-out infinite reverse}
+@keyframes ring{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.08)}}
+.pick .img img{position:relative;z-index:1}
+.pick li{position:relative;border-top-color:transparent}
+.pick li:before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--line)}
+.js .pick li:before{transform:scaleX(0);transform-origin:0 50%;transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .pick li.in:before{transform:scaleX(1)}
+.pick .pr b{color:var(--copper-d)}
+
+/* modal */
+.modal{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.modal.open{animation:mfade .3s ease both}
+.modal.open .pane{animation:mpane .45s var(--ease) both}
+@keyframes mfade{from{opacity:0}to{opacity:1}}
+@keyframes mpane{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+
+footer{border-top:1px solid rgba(185,138,90,.5)}
+footer .auth{margin-top:14px;color:var(--paper);letter-spacing:.06em}
+footer .auth b{font-weight:500;color:var(--copper);border:1px solid rgba(185,138,90,.6);padding:3px 10px;margin-right:8px;display:inline-block}
+footer .src{margin-top:8px;font-size:11px;color:#8F8980;line-height:1.8}
+footer a{transition:color .2s ease}
+footer a:hover{color:var(--paper)}
+
+@media (max-width:900px){
+ .hero .wrap{min-height:0;padding-top:52px;padding-bottom:72px}
+ .hero-bg:after{background:linear-gradient(180deg,rgba(20,19,18,.86) 0%,rgba(20,19,18,.70) 60%,rgba(20,19,18,.82) 100%)}
+ .band span{font-size:11px;letter-spacing:.28em;padding-right:36px}
+ .band span i{margin-right:36px}
+ .stats div{padding:26px 8px}
+ .hero .wrap{grid-template-columns:1fr}
+ .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-left:-20px;margin-right:-20px;padding:0 20px 6px;scrollbar-width:none}
+ .tabs::-webkit-scrollbar{display:none}
+ .tabs button{flex:none;white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){
+ .hero .wrap>div:first-child>*,.hero .bt,.band div,.pick .img:before,.pick .img:after,.cue:after,.modal.open,.modal.open .pane{animation:none}
+ .js .rv,.js .card{opacity:1;transform:none;transition:none}
+ .js .sec-head:after,.js .pick li:before{transform:none;transition:none}
+ .hero-bg video{display:none}
+}
 </style>
 </head>
 <body>
+<i class="prog" id="prog" aria-hidden="true"></i>
 <header><div class="wrap nav">
  <a href="#top" class="brand"><img class="em" src="img/emblem.png" alt=""><img src="img/logo.svg" alt="BACKBAR"></a>
  <nav>
@@ -181,7 +330,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
  </nav>
 </div></header>
 
-<section id="top" class="hero"><div class="wrap">
+<section id="top" class="hero"><div class="hero-bg" aria-hidden="true"><video muted loop playsinline autoplay preload="metadata" poster="img/hero_bg.jpg"><source src="assets/hero_bg.mp4" type="video/mp4"></video></div><div class="wrap">
  <div style="display:flex;flex-direction:column;gap:24px">
   <span class="eyebrow">Salon &amp; Dealer Supply — Members Only</span>
   <h1 class="serif">バックバーに並ぶ、<br>プロのための商材を。</h1>
@@ -193,7 +342,9 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
   <a class="bt" href="#regen"><div class="bi three"><img src="img/sc_adipose.png" alt=""><img src="img/sc_dental.png" alt=""><img src="img/sc_cord.png" alt=""></div><span class="bn">01</span><b>幹細胞上清液</b><span class="bd">再生医療 × 美容　4品目</span></a>
   <a class="bt" href="#pup"><div class="bi"><img src="img/hero_dryer.png" alt=""></div><span class="bn">02</span><b>P-UP シリーズ</b><span class="bd">超美振動テラヘルツ　65品目</span></a>
  </div>
-</div></section>
+</div><i class="cue" aria-hidden="true"></i></section>
+
+<div class="band" aria-hidden="true"><div><span><i>—</i>SALON &amp; DEALER SUPPLY</span><span><i>—</i>MEMBERS ONLY</span><span><i>—</i>REGENERATIVE BEAUTY</span><span><i>—</i>P-UP SERIES</span><span><i>—</i>SALON &amp; DEALER SUPPLY</span><span><i>—</i>MEMBERS ONLY</span><span><i>—</i>REGENERATIVE BEAUTY</span><span><i>—</i>P-UP SERIES</span><span><i>—</i>SALON &amp; DEALER SUPPLY</span><span><i>—</i>MEMBERS ONLY</span><span><i>—</i>REGENERATIVE BEAUTY</span><span><i>—</i>P-UP SERIES</span><span><i>—</i>SALON &amp; DEALER SUPPLY</span><span><i>—</i>MEMBERS ONLY</span><span><i>—</i>REGENERATIVE BEAUTY</span><span><i>—</i>P-UP SERIES</span></div></div>
 
 <section id="regen" class="regen"><div class="wrap">
  <div class="sec-head"><div><span class="eyebrow">Brand 01 — Regenerative Beauty</span><h2 class="serif">再生医療の現場で使われる幹細胞上清液を、<br>P-UP 水素イオン導入水とともに。</h2></div></div>
@@ -223,7 +374,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
  </div>
 </div></section>
 
-<section id="pup" class="dark tech"><div class="wrap">
+<section id="pup" class="dark tech"><canvas id="wave" aria-hidden="true"></canvas><div class="wrap">
  <div style="display:flex;flex-direction:column;gap:16px">
   <span class="eyebrow">Brand 02 — P-UP Series</span>
   <h2 class="serif">超美振動 P-UP テラヘルツ波を、<br>ドライヤーからタオルまで。</h2>
@@ -263,7 +414,7 @@ footer a{color:#B8B2A8;text-decoration:none;margin-right:18px}
 </div></section>
 
 <footer><div class="wrap">
- <div><div class="fbrand"><img class="em" src="img/emblem_rev.png" alt=""><img src="img/logo_rev.svg" alt="BACKBAR"></div><div>BACKBAR（株式会社STRATECTA 美容事業部）　〒530-0001 大阪府大阪市北区梅田1-2-2 大阪駅前第2ビル12-12　TEL 06-7777-6267</div><div>P-UP シリーズ 製造元：株式会社フロンテ／輸入発売元（CHEMISTRY）：大阪ブラシ株式会社</div><div style="margin-top:8px"><a href="./">商品カタログ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a></div></div>
+ <div><div class="fbrand"><img class="em" src="img/emblem_rev.png" alt=""><img src="img/logo_rev.svg" alt="BACKBAR"></div><div>BACKBAR（株式会社STRATECTA 美容事業部）　〒530-0001 大阪府大阪市北区梅田1-2-2 大阪駅前第2ビル12-12　TEL 06-7777-6267</div><div class="auth"><b>正規代理店</b>取扱商品は、すべて正規ルートで仕入れた正規品です。</div><div style="margin-top:8px"><a href="./">商品カタログ</a><a href="apply.html">会員申請</a><a href="terms.html">会員規約</a></div></div>
  <div style="align-self:flex-end">© STRATECTA Inc.</div>
 </div></footer>
 
@@ -322,5 +473,33 @@ function openModal(jan){
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 if(window.BX)BX.apply();
+</script>
+
+<script>
+/* v2 design：動き（スクロール表示・数字・波・ヘッダー）。表示内容は変えない */
+(function(){
+ var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var hd=document.querySelector('header'),pg=document.getElementById('prog');
+ function onS(){var y=window.scrollY||0,h=document.documentElement.scrollHeight-innerHeight;if(hd)hd.classList.toggle('sc',y>8);if(pg)pg.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';}
+ addEventListener('scroll',onS,{passive:true});onS();
+ if(RM||!('IntersectionObserver' in window))return;
+ document.documentElement.classList.add('js');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.06});
+ function mark(sel,step){[].forEach.call(document.querySelectorAll(sel),function(el,i){el.classList.add('rv');if(step)el.style.setProperty('--d',(i%6)*step+'s');io.observe(el);});}
+ mark('.sec-head');mark('.regen .lead>p');mark('.regen .facts>div',.1);mark('.regen .doc');
+ mark('.tech .wrap>div');mark('.pick .img');mark('.pick .wrap>div:last-child>*',.08);mark('.fh');mark('.tabs');
+ [].forEach.call(document.querySelectorAll('.pick li'),function(el,i){el.style.setProperty('--d',i*.12+'s');});
+ function cards(root){var n=0,lastTop=null;[].forEach.call(root.querySelectorAll('.card:not(.seen)'),function(c){c.classList.add('seen');var t=c.offsetTop;if(t!==lastTop){n=0;lastTop=t;}c.style.setProperty('--d',(n++*.07)+'s');io.observe(c);});}
+ ['regenGrid','featTools','featGrid','catGrid'].forEach(function(id){var g=document.getElementById(id);if(!g)return;cards(g);new MutationObserver(function(){cards(g);}).observe(g,{childList:true});});
+ /* 数字のカウントアップ（「8」「65」のように数字だけのもの） */
+ [].forEach.call(document.querySelectorAll('.stats b'),function(b){var t=b.textContent.trim();if(!/^\d+$/.test(t))return;var to=+t;b.textContent='0';
+  new IntersectionObserver(function(es,o){if(!es[0].isIntersecting)return;o.disconnect();var t0=null;(function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);b.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);else b.textContent=t;})(performance.now());},{threshold:.6}).observe(b);});
+ /* P-UP の節の背景の波（飾り） */
+ var cv=document.getElementById('wave');if(cv&&cv.getContext){var cx=cv.getContext('2d'),W=0,H=0,on=false,raf=0,dpr=Math.min(2,window.devicePixelRatio||1);
+  function rs(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);}
+  function dr(ts){var t=ts/1000;cx.clearRect(0,0,W,H);for(var k=0;k<4;k++){cx.beginPath();var a=H*(.05+.025*k),y0=H*(.30+.14*k);for(var x=0;x<=W;x+=6){var y=y0+Math.sin(x*.006+t*(.5+.12*k)+k*1.7)*a+Math.sin(x*.017-t*.8+k)*a*.35;x?cx.lineTo(x,y):cx.moveTo(x,y);}cx.strokeStyle='rgba(185,138,90,'+(.34-.06*k)+')';cx.lineWidth=1;cx.stroke();}if(on)raf=requestAnimationFrame(dr);}
+  rs();addEventListener('resize',rs);
+  new IntersectionObserver(function(es){on=es[0].isIntersecting;cancelAnimationFrame(raf);if(on)raf=requestAnimationFrame(dr);}).observe(cv);}
+})();
 </script>
 </body></html>
